@@ -2,8 +2,8 @@ import os
 from PIL import Image
 
 # WebP 파일들이 있는 폴더 경로
-folder_path = 'C:/Users/SSAFY/Desktop/teenieping_webp'  # 원하는 폴더 경로로 변경
-save_path = 'C:/Users/SSAFY/Desktop/teenieping_png'
+folder_path = 'data/teenieping_webp'  # 원하는 폴더 경로로 변경
+save_path = 'data/teenieping_png'
 
 # 폴더 내의 모든 파일을 순회
 for filename in os.listdir(folder_path):
