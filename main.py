@@ -5,6 +5,7 @@ import replicate
 load_dotenv()
 
 replicate_api_token = os.getenv("REPLICATE_API_TOKEN")
+wandb_api_key = os.getenv("WANDB_API_KEY")
 
 os.environ["REPLICATE_API_TOKEN"] = replicate_api_token
 
@@ -14,14 +15,15 @@ training = replicate.trainings.create(
    input={
       "steps": 6000,
       "lora_rank": 16,
-      "optimizer": "adamw8bit",
+      "optimizer": "adamw",
       "batch_size": 1,
       "hf_repo_id": "Ramge/teenieping-lora",
       "resolution": "512,768,1024",
       "autocaption": True,
-      "input_images": open("data/teenieping_png.zip", "rb"),
+      "input_images": open("data/teeniping_png_background_resize.zip", "rb"),
       "trigger_word": "TEENIEPINGLORA",
       "learning_rate": 0.0004,
+      "wandb_api_key": wandb_api_key,
       "wandb_project": "flux_train_replicate",
       "autocaption_prefix": "a photo of teenieping",
       "wandb_save_interval": 100,
