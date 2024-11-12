@@ -19,7 +19,7 @@ training = replicate.trainings.create(
       "hf_repo_id": "Ramge/teenieping-lora",
       "resolution": "512,768,1024",
       "autocaption": True,
-      "input_images": "teenieping_png.zip",
+      "input_images": open("data/teenieping_png.zip", "rb"),
       "trigger_word": "TEENIEPINGLORA",
       "learning_rate": 0.0004,
       "wandb_project": "flux_train_replicate",
